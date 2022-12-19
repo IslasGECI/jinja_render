@@ -5,6 +5,7 @@ RUN pip install --upgrade pip && pip install \
     black \
     codecov \
     flake8 \
+    jinja2 \
     mutmut \
     mypy \
     pylint \
