@@ -1,3 +1,8 @@
+# Jinja Render
+
+Base functinos to use Jinja2
+
+Here we use the `jinja_render` module, as example, from `robinson_code` repo
 # Dummy Transformations
 
 Para usar este repo como plantilla debemos hacer lo siguiente:
