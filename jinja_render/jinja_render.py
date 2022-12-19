@@ -24,7 +24,7 @@ def get_jinja_latex():
     return latex_jinja_env
 
 
-def get_rendered_report(report_name, path = None):
+def get_rendered_report(report_name, path=None):
     effort_summary = {}
     if path is not None:
         effort_summary = load_json(path)
