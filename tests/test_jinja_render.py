@@ -19,12 +19,17 @@ def test_write_rendered_report():
     write_tex(report_name, summary_path)
     assert os.path.exists(tex_path)
 
+
+def test_write_rendered_report_with_comments():
     tex_path = "reports/paper_with_comments.tex"
     if os.path.exists(tex_path):
         os.remove(tex_path)
     report_name = "paper_with_comments"
     write_tex(report_name)
     assert os.path.exists(tex_path)
+    expected_hash = "6438b454101b61a6eb10a4e85faaed74"
+    obtained_hash = _get_hash_from_tex_file(report_name)
+    assert obtained_hash == expected_hash
 
 
 def test_rendered_report():
