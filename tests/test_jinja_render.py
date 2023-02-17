@@ -15,6 +15,14 @@ def test_write_rendered_report():
     tex_path = "reports/paper.tex"
     if os.path.exists(tex_path):
         os.remove(tex_path)
+    report_name = "paper"
+    write_tex(report_name, summary_path)
+    assert os.path.exists(tex_path)
+
+    tex_path = "reports/paper_with_comments.tex"
+    if os.path.exists(tex_path):
+        os.remove(tex_path)
+    report_name = "paper_with_comments"
     write_tex(report_name)
     assert os.path.exists(tex_path)
 
