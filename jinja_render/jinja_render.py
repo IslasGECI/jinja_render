@@ -6,8 +6,9 @@ import typer
 
 app = typer.Typer()
 
+
 @app.command()
-def write_tex(report_name: str = "", summary_path: str = None):
+def write_tex(report_name: str = "", summary_path=None):
     rendered_report = get_rendered_report(report_name, summary_path)
     with open(f"reports/{report_name}.tex", "w") as report_tex:
         report_tex.writelines(rendered_report)
