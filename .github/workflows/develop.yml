@@ -26,6 +26,12 @@ jobs:
       run: docker push islasgeci/jinja_render:latest
     - name: Sube sha a Docker Hub
       run: docker push islasgeci/jinja_render:${GITHUB_SHA:0:4}
+    - name: Create/Update tag
+      uses: rickstaa/action-create-tag@v1.5.4
+      with:
+        tag: "latest"
+        message: "Latest release"
+        force_push_tag: true
     - uses: actions/checkout@master
     - name: Set up Python 3.9
       uses: actions/setup-python@v1
