@@ -11,5 +11,6 @@ home-page = "https://github.com/IslasGECI/jinja_render"
 module = "jinja_render"
 requires = [
     "jinja2",
+    "typer",
 ]
 requires-python=">=3.9"
