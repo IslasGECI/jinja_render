@@ -1,5 +1,9 @@
 <a href="https://www.islas.org.mx/"><img src="https://www.islas.org.mx/img/logo.svg" align="right" width="256" /></a>
 # Jinja Render
+![licencia](https://img.shields.io/github/license/IslasGECI/jinja_render)
+![languages](https://img.shields.io/github/languages/top/IslasGECI/jinja_render)
+![commits](https://img.shields.io/github/commit-activity/y/IslasGECI/jinja_render)
+![PyPI - Version](https://img.shields.io/pypi/v/jinja_render)
 
 Base functinos to use Jinja2
 
