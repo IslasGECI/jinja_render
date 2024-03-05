@@ -4,7 +4,7 @@ hash_repo = "31c31a791e017550f11986d5a766ddef8803fbd1"
 
 
 def test_get_repo_and_hash():
-    expected = {"repo": "gatos_guadalupe", "hash": hash_repo}
+    expected = {"repo": "jinja_render", "hash": hash_repo}
     obtained = get_repo_and_hash(branch="for_testing")
     assert expected == obtained
 
