@@ -14,7 +14,7 @@ all: check coverage mutants
 		tests
 
 module = jinja_render
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+codecov_token = 82c65e46-9923-4481-bc08-d4fe4ace6d51
 
 define lint
 	pylint \

@@ -1,5 +1,6 @@
 <a href="https://www.islas.org.mx/"><img src="https://www.islas.org.mx/img/logo.svg" align="right" width="256" /></a>
 # Jinja Render
+[![codecov](https://codecov.io/gh/IslasGECI/jinja_render/graph/badge.svg?token=ia1J0LyJiQ)](https://codecov.io/gh/IslasGECI/jinja_render)
 ![licencia](https://img.shields.io/github/license/IslasGECI/jinja_render)
 ![languages](https://img.shields.io/github/languages/top/IslasGECI/jinja_render)
 ![commits](https://img.shields.io/github/commit-activity/y/IslasGECI/jinja_render)
