@@ -1,7 +1,7 @@
 import os
 
 
-def get_repo_and_hash(branch):
+def get_repo_and_hash(branch="HEAD"):
     hash = get_hash_from_branch(branch)
     name = get_repo_name()
     return {"repo": name, "hash": hash}
