@@ -18,9 +18,8 @@ def get_hash_from_branch(branch):
 def get_repo_name():
     command = "git config --global --add safe.directory /workdir"
     run_command(command)
-    stream = os.popen("basename $(git remote get-url origin)")
-    output = stream.read()
-    return output.split(".")[0]
+    stream = os.popen("basename $(git remote get-url origin) | cut -d '.' -f 1")
+    return stream.read().strip()
 
 
 def run_command(command):
