@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copia repositorio
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
+      with:
+        fetch-tags: true
     - name: Construye imagen
       run: docker build --tag islasgeci/jinja_render:latest --tag islasgeci/jinja_render:${GITHUB_SHA:0:4} .
     - name: Verifica el formato
