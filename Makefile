@@ -40,6 +40,7 @@ clean:
 	rm --force --recursive tests/__pycache__
 	rm --force .mutmut-cache
 	rm --force coverage.xml
+	rm --force --recursive dummy_for_testing
 
 coverage: setup
 	pytest --cov=${module} --cov-report=xml --verbose && \
@@ -61,7 +62,30 @@ linter:
 mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
-setup: clean install
+setup: clean install setup_github
+
+setup_github:
+	git config --global --add safe.directory /workdir
+	git config --global user.name "Ciencia de Datos • GECI"
+	git config --global user.email "ciencia.datos@islas.org.mx"
 
 tests:
 	pytest --verbose
+
+red: format
+	pytest --verbose \
+	&& git restore tests/*.py \
+	|| (git add tests/*.py && git commit -m "🛑🧪 Fail tests")
+	chmod g+w -R .
+
+green: format
+	pytest --verbose \
+	&& (git add ${module}/*.py tests/*.py && git commit -m "✅ Pass tests") \
+	|| git restore ${module}/*.py
+	chmod g+w -R .
+
+refactor: format
+	pytest --verbose \
+	&& (git add ${module}/*.py tests/*.py && git commit -m "♻️  Refactor") \
+	|| git restore ${module}/*.py tests/*.py
+	chmod g+w -R .
