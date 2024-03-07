@@ -25,15 +25,6 @@ jobs:
       run: docker run islasgeci/jinja_render:latest make coverage
     - name: Evalúa resistencia a mutaciones
       run: docker run islasgeci/jinja_render:latest make mutants
-    - name: Docker log-in
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
-    - name: Sube latest a Docker Hub
-      run: docker push islasgeci/jinja_render:latest
-    - name: Sube sha a Docker Hub
-      run: docker push islasgeci/jinja_render:${GITHUB_SHA:0:4}
     - uses: actions/checkout@master
     - name: Set up Python 3.9
       uses: actions/setup-python@v1
