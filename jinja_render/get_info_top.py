@@ -1,7 +1,7 @@
 import os
 
 
-def get_hash_from_branch(branch="develop"):
+def get_hash_from_branch(branch):
     os.system("git config --global --add safe.directory /workdir")
     stream = os.popen(f"git rev-parse {branch}")
     output = stream.read()
@@ -9,7 +9,7 @@ def get_hash_from_branch(branch="develop"):
 
 
 def get_hash_from_develop():
-    return get_hash_from_branch(branch="develop")
+    return get_hash_from_branch("develop")
 
 
 def get_repo_name():
