@@ -20,7 +20,7 @@ def get_repo_name():
     run_command(command)
     stream = os.popen("basename $(git remote get-url origin)")
     output = stream.read()
-    return output.split(".")[0].strip("\n")
+    return output.split(".")[0]
 
 
 def run_command(command):
