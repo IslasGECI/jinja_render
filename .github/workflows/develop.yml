@@ -10,7 +10,10 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@main
       with:
+        fetch-depth: 0
         fetch-tags: true
+    - name: Check cloned tags
+      run: git tag
     - name: Construye imagen
       run: docker build --tag islasgeci/jinja_render:latest --tag islasgeci/jinja_render:${GITHUB_SHA:0:4} .
     - name: Verifica el formato
