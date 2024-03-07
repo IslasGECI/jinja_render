@@ -2,18 +2,22 @@ import os
 
 
 def get_hash_from_branch(branch):
-    os.system("git config --global --add safe.directory /workdir")
+    command = "git config --global --add safe.directory /workdir"
+    run_command(command)
     stream = os.popen(f"git rev-parse {branch}")
     output = stream.read()
     return output.split("\n")[0]
 
 
-def get_hash_from_develop():
-    return get_hash_from_branch("develop")
+def run_command(command):
+    exit_code = os.system(command)
+    assert exit_code == 0
+
 
 
 def get_repo_name():
-    os.system("git config --global --add safe.directory /workdir")
+    command = "git config --global --add safe.directory /workdir"
+    run_command(command)
     stream = os.popen("basename $(git remote get-url origin)")
     output = stream.read()
     return output.split(".")[0].strip("\n")
