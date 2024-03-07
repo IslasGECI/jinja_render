@@ -9,7 +9,7 @@ def test_get_repo_and_hash():
     assert expected == obtained
 
 
-def test_get_hash_from_develop():
+def test_get_hash_from_branch():
     expected = hash_repo
     obtained = get_hash_from_branch(branch="for_testing")
     assert expected == obtained
