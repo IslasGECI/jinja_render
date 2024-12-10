@@ -56,3 +56,5 @@ def test_add_repo_info():
     summary_content = {}
     obtained = add_repo_info(summary_content)
     assert "repo" in obtained.keys()
+    expected_hash_length = 40
+    assert len(obtained["hash"]) == expected_hash_length

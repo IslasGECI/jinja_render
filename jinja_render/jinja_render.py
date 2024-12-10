@@ -2,6 +2,8 @@ import os
 import json
 from jinja2 import Environment, FileSystemLoader
 
+from jinja_render.get_info_top import add_repo_info
+
 import typer
 
 app = typer.Typer()
@@ -35,6 +37,7 @@ def get_rendered_report(report_name, path=None):
     effort_summary = {}
     if path is not None:
         effort_summary = load_json(path)
+    effort_summary_with_top_info = add_repo_info(effort_summary)
     latex_jinja_env = get_jinja_latex()
     template = latex_jinja_env.get_template(f"reports/templates/{report_name}.tex")
-    return template.render(effort_summary)
+    return template.render(effort_summary_with_top_info)
