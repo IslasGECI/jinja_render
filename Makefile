@@ -62,7 +62,7 @@ linter:
 mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
-setup: clean install setup_github
+setup: setup_github clean install
 
 setup_github:
 	git config --global --add safe.directory /workdir
