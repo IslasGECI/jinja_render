@@ -2,6 +2,7 @@ import hashlib
 import os
 
 from jinja_render import (
+    add_repo_info,
     get_rendered_report,
     write_tex,
 )
@@ -49,3 +50,9 @@ def _get_hash_from_tex_file(report_name):
     report_content = rendered_report.encode("utf-8")
     obtained_hash = hashlib.md5(report_content).hexdigest()
     return obtained_hash
+
+
+def test_add_repo_info():
+    summary_content = {}
+    obtained = add_repo_info(summary_content)
+    assert "repo" in obtained.keys()
