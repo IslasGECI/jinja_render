@@ -1,6 +1,12 @@
 import os
 
 
+def add_repo_info(summary_content):
+    repo_and_hash = get_repo_and_hash("develop")
+    summary_content.update(repo_and_hash)
+    return summary_content
+
+
 def get_repo_and_hash(branch="HEAD"):
     hash = get_hash_from_branch(branch)
     name = get_repo_name()
