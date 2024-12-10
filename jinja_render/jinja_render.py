@@ -24,9 +24,9 @@ def load_json(path):
 
 def get_jinja_latex():
     latex_jinja_env = Environment(
-        variable_start_string="\VAR{",
+        variable_start_string="\\VAR{",
         variable_end_string="}",
-        comment_start_string="\#{",
+        comment_start_string="\\#{",
         comment_end_string="}",
         loader=FileSystemLoader(os.path.abspath(".")),
     )
